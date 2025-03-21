@@ -8,12 +8,12 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_30%,rgba(56,189,248,0.1),rgba(255,255,255,0))]" />
       
       <div className="absolute w-full h-full -z-10">
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl animate-float opacity-60" />
-        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-accent rounded-full filter blur-3xl animate-float opacity-40" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-3xl animate-float opacity-60" />
+        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-cyan-700 rounded-full filter blur-3xl animate-float opacity-40" style={{ animationDelay: '1s' }} />
       </div>
       
       <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
-        <div className="inline-block px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-4 animate-fade-in">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-cyan-700/65 text-white text-sm font-medium mb-4 animate-fade-in">
           Effortlessly track your spending
         </div>
        
