@@ -10,9 +10,9 @@ const Index = () => {
     <div className="min-h-screen">
         <Navbar />
           <main className='pt-2'>
-              <Hero />
-              <Features />
-              <HowItWorks />
+            <Hero />
+            <Features />
+            <HowItWorks />
           </main>
         <Footer />
     </div>
