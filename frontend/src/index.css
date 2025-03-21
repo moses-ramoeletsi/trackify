@@ -10,7 +10,7 @@ body {
 @layer components {
     .btn-primary {
       border-radius: calc(infinity * 1px);
-      background-color: #4468A6;
+      background-color: #00BCD4;
       padding-inline: --spacing(5);
       padding-block: --spacing(2);
       font-weight: var(--font-weight-semibold);
@@ -18,7 +18,7 @@ body {
       box-shadow: var(--shadow-md);
       &:hover {
         @media (hover: hover) {
-          background-color: #28487B ;
+          background-color: #00cee9 ;
         }
       }
     }
@@ -26,6 +26,6 @@ body {
   }
   @layer utilities{
     .trackify-blue{
-      color: #4468A6;
+      color: #00BCD4;
     }
   }

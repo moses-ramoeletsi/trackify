@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-12 px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+            <Link to="/" className="text-2xl font-bold bg-clip-text text-cyan-500 bg-gradient-to-r from-primary to-primary/70">
               Trackify
             </Link>
             <p className="text-muted-foreground">

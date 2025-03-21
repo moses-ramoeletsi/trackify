@@ -17,7 +17,7 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-6">
-              <div className="h-16 w-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold">
+              <div className="h-16 w-16 rounded-full bg-cyan-500 text-white flex items-center justify-center text-2xl font-bold">
                 1
               </div>
             </div>
@@ -29,7 +29,7 @@ const HowItWorks = () => {
 
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-6">
-              <div className="h-16 w-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold">
+              <div className="h-16 w-16 rounded-full bg-cyan-500 text-white flex items-center justify-center text-2xl font-bold">
                 2
               </div>
             </div>
@@ -41,7 +41,7 @@ const HowItWorks = () => {
 
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-6">
-              <div className="h-16 w-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold">
+              <div className="h-16 w-16 rounded-full bg-cyan-500 text-white flex items-center justify-center text-2xl font-bold">
                 3
               </div>
             </div>
@@ -69,7 +69,7 @@ const HowItWorks = () => {
                   "Regular updates and new features"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="mr-3 h-6 w-6 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                    <div className="mr-3 h-6 w-6 rounded-full bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
                       <Check className="h-3.5 w-3.5" />
                     </div>
                     <span>{item}</span>
