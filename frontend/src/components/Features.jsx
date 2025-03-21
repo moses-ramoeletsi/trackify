@@ -1,11 +1,11 @@
-import { Calendar, ChartPieIcon, CreditCard, Download, Search } from 'lucide-react';
+import { Calendar, ChartPieIcon, CreditCard, Download, LineChart, Search } from 'lucide-react';
 import React from 'react';
-import { LineChart } from 'recharts';
+
 
 function Feature({ icon, title, description }) {
   return (
     <div className="flex flex-col p-6 bg-card rounded-xl border border-border/60 transition-all hover:shadow-md hover:-translate-y-1 duration-300">
-      <div className="h-12 w-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary mb-5">
+      <div className="h-12 w-12 flex items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-500 mb-5">
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
