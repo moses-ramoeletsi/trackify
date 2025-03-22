@@ -122,64 +122,64 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
     };
 
     return (
-        <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold mb-6 flex items-center">
-                <User className="mr-2" size={20} />
-                User Profile
+        <div>
+            <h2 className="text-xl font-semibold mb-4 sm:mb-6 flex items-center">
+                <User className="mr-2 flex-shrink-0" size={20} />
+                <span className="truncate">User Profile</span>
             </h2>
 
             {error && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md flex items-start">
+                <div className="mb-4 p-2 sm:p-3 bg-red-50 border border-red-200 rounded-md flex items-start">
                     <AlertTriangle className="text-red-500 mr-2 mt-0.5 flex-shrink-0" size={18} />
-                    <span className="text-red-700">{error}</span>
+                    <span className="text-red-700 text-sm sm:text-base">{error}</span>
                 </div>
             )}
 
             {success && (
-                <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-md">
-                    <span className="text-green-700">{success}</span>
+                <div className="mb-4 p-2 sm:p-3 bg-green-50 border border-green-200 rounded-md">
+                    <span className="text-green-700 text-sm sm:text-base">{success}</span>
                 </div>
             )}
 
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
                 {!isEditing ? (
                     <div className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <p className="text-sm text-gray-500">Name</p>
-                                <p className="font-medium">{user.name || 'Not provided'}</p>
+                                <p className="text-xs sm:text-sm text-gray-500">Name</p>
+                                <p className="font-medium text-sm sm:text-base truncate">{user.name || 'Not provided'}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Email</p>
-                                <p className="font-medium">{user.email}</p>
+                                <p className="text-xs sm:text-sm text-gray-500">Email</p>
+                                <p className="font-medium text-sm sm:text-base truncate">{user.email}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Phone</p>
-                                <p className="font-medium">{user.phone || 'Not provided'}</p>
+                                <p className="text-xs sm:text-sm text-gray-500">Phone</p>
+                                <p className="font-medium text-sm sm:text-base truncate">{user.phone || 'Not provided'}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Account Expires</p>
-                                <p className="font-medium">
+                                <p className="text-xs sm:text-sm text-gray-500">Account Expires</p>
+                                <p className="font-medium text-sm sm:text-base truncate">
                                     {new Date(user.expirationTime).toLocaleDateString()}
                                 </p>
                             </div>
                         </div>
-                        <div className="mt-4">
+                        <div className="mt-4 flex flex-wrap gap-2">
                             <button
                                 onClick={() => setIsEditing(true)}
-                                className="px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 mr-3"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-cyan-500 text-white rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                             >
                                 Edit Profile
                             </button>
                             <button
                                 onClick={startChangingPassword}
-                                className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 mr-3"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-gray-500 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                             >
                                 Change Password
                             </button>
                             <button
                                 onClick={onCancel}
-                                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                             >
                                 Return to Dashboard
                             </button>
@@ -187,9 +187,9 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                     </div>
                 ) : (
                     <form onSubmit={handleProfileUpdate} className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                                     Name
                                 </label>
                                 <input
@@ -197,11 +197,11 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                     name="name"
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500"
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <div className="sm:col-span-1">
+                                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                                     Email
                                 </label>
                                 <input
@@ -209,12 +209,12 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500"
                                     required
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <div className="sm:col-span-1">
+                                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                                     Phone
                                 </label>
                                 <input
@@ -222,14 +222,14 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500"
                                 />
                             </div>
                         </div>
-                        <div className="flex items-center mt-4">
+                        <div className="flex flex-wrap gap-2 mt-4">
                             <button
                                 type="submit"
-                                className="px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 mr-3"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-cyan-500 text-white rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                             >
                                 Save Changes
                             </button>
@@ -245,7 +245,7 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                         phone: user.phone || ''
                                     });
                                 }}
-                                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                             >
                                 Cancel
                             </button>
@@ -255,30 +255,30 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
             </div>
 
             {isChangingPassword && (
-                <div className="border-t pt-6">
-                    <h3 className="text-lg font-medium mb-4 flex items-center">
-                        <Lock className="mr-2" size={18} />
-                        Change Password
+                <div className="border-t pt-4 sm:pt-6">
+                    <h3 className="text-base sm:text-lg font-medium mb-4 flex items-center">
+                        <Lock className="mr-2 flex-shrink-0" size={18} />
+                        <span className="truncate">Change Password</span>
                     </h3>
                     <form onSubmit={handlePasswordUpdate} className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 gap-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                                     Current Password
                                 </label>
                                 <div className="relative">
                                     {/* Option 1: Show actual password (pre-filled) */}
-                                    <div className="flex items-center w-full px-3 py-2 border border-gray-300 rounded-md">
-                                        <span className="flex-grow">
+                                    <div className="flex items-center w-full px-3 py-2 text-sm border border-gray-300 rounded-md">
+                                        <span className="flex-grow truncate">
                                             {showCurrentPassword ? passwordData.currentPassword : '••••••'}
                                         </span>
                                         <button
                                             type="button"
-                                            className="text-gray-500 hover:text-cyan-500 focus:outline-none"
+                                            className="text-gray-500 hover:text-cyan-500 focus:outline-none flex-shrink-0 ml-1"
                                             onClick={() => setShowCurrentPassword(!showCurrentPassword)}
                                             tabIndex="-1"
                                         >
-                                            {showCurrentPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                                            {showCurrentPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                                         </button>
                                     </div>
                                     
@@ -290,9 +290,8 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                     />
                                 </div>
                             </div>
-                            <div className="md:col-span-2" />
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                                     New Password
                                 </label>
                                 <div className="relative">
@@ -301,7 +300,7 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                         name="newPassword"
                                         value={passwordData.newPassword}
                                         onChange={handlePasswordChange}
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500 pr-10"
+                                        className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500 pr-10"
                                         required
                                         minLength={6}
                                     />
@@ -311,12 +310,13 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                         onClick={() => setShowNewPassword(!showNewPassword)}
                                         tabIndex="-1"
                                     >
-                                        {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                                        {showNewPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                                     </button>
                                 </div>
+                                <p className="text-xs text-gray-500 mt-1">Minimum 6 characters</p>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                                     Confirm New Password
                                 </label>
                                 <div className="relative">
@@ -325,7 +325,7 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                         name="confirmPassword"
                                         value={passwordData.confirmPassword}
                                         onChange={handlePasswordChange}
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500 pr-10"
+                                        className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-cyan-500 pr-10"
                                         required
                                     />
                                     <button
@@ -334,15 +334,15 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                         tabIndex="-1"
                                     >
-                                        {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                                        {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex items-center mt-4">
+                        <div className="flex flex-wrap gap-2 mt-4">
                             <button
                                 type="submit"
-                                className="px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 mr-3"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-cyan-500 text-white rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                             >
                                 Update Password
                             </button>
@@ -358,7 +358,7 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                                         confirmPassword: ''
                                     });
                                 }}
-                                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                                className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                             >
                                 Cancel
                             </button>
@@ -367,14 +367,14 @@ const UserProfile = ({ user, onUpdateProfile, onDeleteAccount, onCancel }) => {
                 </div>
             )}
 
-            <div className="border-t pt-6 mt-8">
-                <h3 className="text-lg font-medium mb-4 text-red-600">Danger Zone</h3>
-                <p className="text-sm text-gray-600 mb-4">
+            <div className="border-t pt-4 sm:pt-6 mt-6 sm:mt-8">
+                <h3 className="text-base sm:text-lg font-medium mb-2 sm:mb-4 text-red-600">Danger Zone</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-4">
                     Once you delete your account, there is no going back. This action cannot be undone.
                 </p>
                 <button
                     onClick={onDeleteAccount}
-                    className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                 >
                     Delete Account
                 </button>
