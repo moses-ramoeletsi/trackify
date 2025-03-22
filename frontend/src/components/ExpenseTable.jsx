@@ -16,6 +16,7 @@ const ExpenseTable = ({ expenses, onEditExpense, onDeleteExpense }) => {
               <th scope='col' className='p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Product</th>
               <th scope='col' className='p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Category</th>
               <th scope='col' className='p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Vendor</th>
+              <th scope='col' className='p-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider'>Quantity</th>
               <th scope='col' className='p-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider'>Price</th>
               <th scope='col' className='p-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider'>Actions</th>
             </tr>
@@ -27,6 +28,9 @@ const ExpenseTable = ({ expenses, onEditExpense, onDeleteExpense }) => {
                 <td className='p-3 whitespace-nowrap text-sm font-medium text-gray-900'>{expense.product}</td>
                 <td className='p-3 whitespace-nowrap text-sm trackify-blue uppercase'>{expense.category}</td>
                 <td className='p-3 whitespace-nowrap text-sm text-gray-900'>{expense.vendor}</td>
+                <td className='p-3 whitespace-nowrap text-sm text-gray-900 text-center'>
+                  {expense.category === 'Transportation' ? '-' : expense.quantity}
+                </td>
                 <td className='p-3 whitespace-nowrap text-sm trackify-blue text-right'>M{expense.price.toFixed(2)}</td>
                 <td className='p-3 whitespace-nowrap text-sm font-medium text-right'>
                   <div className='flex justify-end space-x-2'>
@@ -50,7 +54,7 @@ const ExpenseTable = ({ expenses, onEditExpense, onDeleteExpense }) => {
             ))}
             {expenses.length === 0 && (
               <tr>
-                <td colSpan="6" className="p-4 text-center text-gray-500">
+                <td colSpan="7" className="p-4 text-center text-gray-500">
                   No expenses found. Add some expenses to get started.
                 </td>
               </tr>
